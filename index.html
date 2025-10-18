@@ -3,160 +3,156 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portofolio — [Nama Anda]</title>
-  <meta name="description" content="Portofolio pribadi [Nama Anda] — developer, desainer, dan pembuat produk." />
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#4f46e5;--glass: rgba(255,255,255,0.04)}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,var(--bg),#071029 120%);-webkit-font-smoothing:antialiased}
-    .container{max-width:1100px;margin:32px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    nav{display:flex;gap:12px}
-    a.nav{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
-    a.nav:hover{background:var(--glass);color:#fff}
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-top:28px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
-    h1{margin:0;font-size:28px}
-    p.lead{color:var(--muted);margin-top:10px;line-height:1.6}
-    .cta{margin-top:18px;display:flex;gap:10px}
-    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white}
-    .btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
-    .avatar{width:100%;height:100%;max-width:320px;border-radius:12px;background:linear-gradient(135deg,#0ea5a4 0%,#7c3aed 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:18px}
-    /* Projects grid */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.03)}
-    .project h3{margin:8px 0 6px}
-    .muted{color:var(--muted);font-size:14px}
-    /* skills */
-    .skills{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .skill{flex:1 1 180px}
-    .bar{height:10px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden}
-    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#06b6d4)}
-    /* contact */
-    footer{margin-top:26px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .socials{display:flex;gap:10px}
-    .chip{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
-    /* Responsive */
-    @media (max-width:980px){.hero{grid-template-columns:1fr;}.grid{grid-template-columns:repeat(2,1fr)}.container{padding:16px}}
-    @media (max-width:600px){.grid{grid-template-columns:1fr}.nav{display:none}}
-  </style>
+  <title>Portfolio — Nama Kamu</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">NM</div>
-        <div>
-          <div style="font-weight:700">[Nama Anda]</div>
-          <div class="muted" style="font-size:13px">Frontend Developer • UI/UX Enthusiast</div>
-        </div>
-      </div>
-      <nav class="nav">
-        <a class="nav" href="#about">About</a>
-        <a class="nav" href="#projects">Projects</a>
-        <a class="nav" href="#skills">Skills</a>
-        <a class="nav" href="#contact">Contact</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Nama Kamu</a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-label="Buka menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav id="nav" class="nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">Tentang</a>
+        <a href="#projects" class="nav-link">Proyek</a>
+        <a href="#contact" class="nav-link">Kontak</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <section class="hero">
-      <div>
-        <div class="card">
-          <h1>Halo — saya [Nama Anda]</h1>
-          <p class="lead">Saya membuat aplikasi web yang cepat, aksesibel, dan terlihat cantik. Saya fokus pada pengalaman pengguna, performa, dan penulisan kode yang mudah dipelihara.</p>
-          <div class="cta">
-            <button class="btn btn-primary" onclick="location.href='#contact'">Hubungi saya</button>
-            <a class="btn btn-ghost" href="#projects">Lihat Proyek</a>
-          </div>
-
-          <div id="about" style="margin-top:18px">
-            <h3>Tentang saya</h3>
-            <p class="muted">[Masukkan ringkasan singkat diri Anda — pengalaman, tools yang dikuasai, dan apa yang Anda cari].</p>
-          </div>
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Hai, saya <span class="accent">Nama Kamu</span></h1>
+          <p class="lead">Front-end developer • Desainer UI • Pembuat solusi web yang cepat dan rapi.</p>
+          <p class="cta-row">
+            <a class="btn" href="#projects">Lihat Proyek</a>
+            <a class="btn outline" href="#contact">Hubungi</a>
+          </p>
         </div>
-
-        <div id="projects" class="card" style="margin-top:16px">
-          <h2>Proyek</h2>
-          <div class="grid">
-            <article class="project">
-              <div style="height:120px;border-radius:8px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:flex;align-items:center;justify-content:center;color:white">Screenshot / Gambar</div>
-              <h3>Project A</h3>
-              <div class="muted">Deskripsi singkat project, tech stack: HTML, CSS, JS</div>
-            </article>
-            <article class="project">
-              <div style="height:120px;border-radius:8px;background:linear-gradient(135deg,#f97316,#ef4444);display:flex;align-items:center;justify-content:center;color:white">Screenshot / Gambar</div>
-              <h3>Project B</h3>
-              <div class="muted">Aplikasi SPA dengan React + API</div>
-            </article>
-            <article class="project">
-              <div style="height:120px;border-radius:8px;background:linear-gradient(135deg,#10b981,#06b6d4);display:flex;align-items:center;justify-content:center;color:white">Screenshot / Gambar</div>
-              <h3>Project C</h3>
-              <div class="muted">E-commerce sederhana, fitur keranjang & checkout</div>
-            </article>
-          </div>
+        <div class="hero-card">
+          <div class="profile-pic" aria-hidden="true">NK</div>
+          <ul class="meta">
+            <li><strong>Lokasi</strong><span>Indonesia</span></li>
+            <li><strong>Keahlian</strong><span>HTML, CSS, JS</span></li>
+            <li><strong>Bahasa</strong><span>ID, EN</span></li>
+          </ul>
         </div>
       </div>
-
-      <aside>
-        <div class="avatar card">
-          <div style="text-align:center;padding:18px">
-            <div style="font-size:20px;font-weight:700">[Nama Anda]</div>
-            <div class="muted" style="margin-top:6px">Frontend • UI • Accessibility</div>
-            <div style="margin-top:12px">
-              <div class="chip">Lokasi: Indonesia</div>
-            </div>
-          </div>
-        </div>
-
-        <div id="skills" class="card" style="margin-top:12px">
-          <h3>Skills</h3>
-          <div class="skills">
-            <div class="skill">
-              <div style="display:flex;justify-content:space-between"><strong>HTML & CSS</strong><span class="muted">90%</span></div>
-              <div class="bar" style="margin-top:8px"><i style="width:90%"></i></div>
-            </div>
-            <div class="skill">
-              <div style="display:flex;justify-content:space-between"><strong>JavaScript</strong><span class="muted">80%</span></div>
-              <div class="bar" style="margin-top:8px"><i style="width:80%"></i></div>
-            </div>
-            <div class="skill">
-              <div style="display:flex;justify-content:space-between"><strong>React</strong><span class="muted">75%</span></div>
-              <div class="bar" style="margin-top:8px"><i style="width:75%"></i></div>
-            </div>
-          </div>
-        </div>
-
-        <div id="contact" class="card" style="margin-top:12px">
-          <h3>Contact</h3>
-          <p class="muted">Email: <a href="mailto:email@domain.com" style="color:inherit">email@domain.com</a></p>
-          <p class="muted">LinkedIn: <a href="#" style="color:inherit">linkedin.com/in/username</a></p>
-          <div style="margin-top:8px"><button class="btn btn-primary" onclick="window.location='mailto:email@domain.com?subject=Halo dari Portofolio'">Kirim Email</button></div>
-        </div>
-      </aside>
     </section>
 
-    <footer>
-      <div class="muted">© " + new Date().getFullYear() + " [Nama Anda]. Semua hak dilindungi.</div>
-      <div class="socials">
-        <div class="chip">GitHub</div>
-        <div class="chip">Twitter</div>
-        <div class="chip">Instagram</div>
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">Tentang Saya</h2>
+        <p>Saya membuat antarmuka dan pengalaman pengguna yang sederhana namun efektif. Fokus pada performa, aksesibilitas, dan desain yang konsisten.</p>
+
+        <div class="skills-grid">
+          <div class="skill">
+            <h3>Web</h3>
+            <p>HTML semantik, CSS modern, responsive design.</p>
+          </div>
+          <div class="skill">
+            <h3>Interaksi</h3>
+            <p>Vanilla JS, form validation, animasi halus.</p>
+          </div>
+          <div class="skill">
+            <h3>Tools</h3>
+            <p>Git, VSCode, Chrome DevTools.</p>
+          </div>
+        </div>
       </div>
-    </footer>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Proyek</h2>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-thumb" data-title="Situs Toko" data-desc="Situs e-commerce sederhana dengan fitur keranjang." tabindex="0">
+              <h4>Situs Toko</h4>
+            </div>
+            <p class="project-lead">E-commerce sederhana • HTML/CSS/JS</p>
+            <div class="project-actions">
+              <button class="btn small view-project" data-title="Situs Toko" data-desc="Demo toko online — keranjang, filter, dan checkout sederhana.">Lihat</button>
+              <a class="link" href="#" target="_blank" rel="noopener">Repo</a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-thumb" data-title="Dashboard Analitik" data-desc="Prototype dashboard dengan grafik dan filter.">
+              <h4>Dashboard</h4>
+            </div>
+            <p class="project-lead">Prototype • UI/UX</p>
+            <div class="project-actions">
+              <button class="btn small view-project" data-title="Dashboard Analitik" data-desc="Prototype dashboard interaktif untuk analitik." >Lihat</button>
+              <a class="link" href="#" target="_blank" rel="noopener">Repo</a>
+            </div>
+          </article>
+
+          <!-- Tambah project lain sesuai kebutuhan -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Kontak</h2>
+        <p>Isi formulir di bawah atau kirim email langsung ke: <a href="mailto:email@domain.com" class="link">email@domain.com</a></p>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <label>
+            <span>Nama</span>
+            <input type="text" name="name" id="name" required minlength="2" />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" id="email" required />
+          </label>
+
+          <label>
+            <span>Pesan</span>
+            <textarea name="message" id="message" rows="5" required minlength="10"></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Kirim Pesan</button>
+            <button type="button" id="clear-btn" class="btn outline">Bersihkan</button>
+          </div>
+
+          <p id="form-msg" class="form-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Nama Kamu. Dibuat dengan ❤️.</p>
+      <nav class="footer-nav">
+        <a href="#" class="link">Privacy</a>
+        <a href="#" class="link">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Modal sederhana untuk preview proyek -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-panel" role="document">
+      <button id="modal-close" class="modal-close" aria-label="Tutup">&times;</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+    </div>
   </div>
 
-  <script>
-    // Small enhancement: replace year placeholder in footer (for single-file portability)
-    (function(){
-      try{
-        var footer = document.querySelector('footer .muted');
-        if(footer) footer.textContent = '© ' + new Date().getFullYear() + ' [Nama Anda]. Semua hak dilindungi.';
-      }catch(e){}
-    })();
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
-
